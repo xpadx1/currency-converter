@@ -1,0 +1,59 @@
+.orders {
+    padding-right: 20px;
+}
+
+label {
+    font-size: 20px;
+}
+
+.order-wrapper {
+    width: 100px;
+    margin: 10px 0 10px 0;
+}
+
+input {
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px;
+    border-right: 1px solid black;
+    &:focus-visible {
+        border: 1px solid gray !important;
+        outline-offset: 10000px;
+    }
+    &:hover {
+        background: aliceblue;
+    }
+}
+
+select {
+    height: 50px;
+    position: relative;
+    top: 0px;
+    border-radius: 0px;
+    border: 1px;
+    font-size: 20px;
+    padding: 10px;
+    &:focus-visible {
+        outline-offset: 10000px;
+    }
+    &:hover {
+        background: aliceblue;
+    }
+    
+}
+
+option {
+    height: 20px;
+    width: 50px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.lds-ring {
+    position: absolute;
+    left: 570px;
+    bottom: 510px;
+}
+

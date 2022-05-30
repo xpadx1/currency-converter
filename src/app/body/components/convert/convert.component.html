@@ -1,6 +1,8 @@
 <form class = "form" [formGroup]="formFrom">
-    <label class="orders">From</label>
-    <input type = "number" formControlName="amount" id="amount" (ngModelChange) = "submitAmount('from')">
+    <div class="order-wrapper">
+        <label class="orders">From</label>
+    </div>
+    <input type = "text" formControlName="amount" id="amount" (ngModelChange) = "submitAmount('from')">
     <select formControlName="orders" id="orders" (ngModelChange)="submitCurrency()">
       <option *ngFor="let order of orders; let i = index" [ngValue]="orders[i].name">
         {{orders[i].name}}
@@ -8,8 +10,10 @@
     </select>
 </form>
 <form class = "form" [formGroup]="formTo">
-    <label class="orders">Tooo</label>
-    <input type = "number" formControlName="amount" id="amount" (ngModelChange) = "submitAmount('to')">
+    <div class="order-wrapper">
+        <label class="orders">To</label>
+    </div>
+    <input type = "text" formControlName="amount" id="amount" (ngModelChange) = "submitAmount('to')">
     <select formControlName="orders" id="orders"  (ngModelChange)="submitCurrency()" >
       <option *ngFor="let order of orders; let i = index" [ngValue]="orders[i].name">
         {{orders[i].name}}

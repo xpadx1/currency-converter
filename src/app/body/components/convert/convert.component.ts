@@ -18,6 +18,7 @@ export class ConvertComponent implements OnInit {
   order: string = '';
 
   currencyRate: number;
+  loader = false;
 
   constructor(private formBuilder: FormBuilder,
     private currencyService: CurrencyService,
@@ -73,8 +74,10 @@ export class ConvertComponent implements OnInit {
 
   sendRequest(currency: boolean) {
     if (this.formFrom.value.orders && this.formTo.value.orders && this.formFrom.value.amount && currency) {
+      this.loader = true;
       this.currencyService.getCurrency(this.apiKeyService.apikey, this.formTo.value.orders, this.formFrom.value.orders, this.formFrom.value.amount)
         .subscribe(res => {
+          this.loader = false
           this.currencyRate = res.info.rate;
           this.formTo.controls['amount'].setValue((this.currencyRate * this.formFrom.value.amount).toFixed(1), { emitEvent: false, emitViewToModelChange: false });
         })

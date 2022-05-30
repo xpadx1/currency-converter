@@ -1,4 +1,4 @@
-b, p, span{
+b, a, input, select, label, p, span{
     font-family: "Oxygen", Arial, Helvetica, sans-serif;
 }
 
@@ -6,20 +6,67 @@ b, p, span{
     background-color: #f1f1f1;
     height: auto;
     padding: 170px 0 40px 0;
+    height: 400px;
 }
 
 .text {
     max-width: 65vw;
-    margin: 10px auto 0;
+    margin: 30px auto 0;
 }
 
 .headline-container {
     max-width: 65vw;
     margin: auto;
-    padding-top: 5px;
+    padding-top: 25px;
     text-align: center;
 }
 
 b {
     font-size: 20px
 }
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    padding-right: 25px
+  }
+
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 25px;
+    bottom: -12px;
+    height: 25px;
+    margin: 8px;
+    border: 4px solid black;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: black transparent transparent transparent;
+  }
+
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+
+  @keyframes lds-ring {
+
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+    
+  }
