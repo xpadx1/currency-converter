@@ -1,0 +1,19 @@
+<form class = "form" [formGroup]="formFrom">
+    <label class="orders">From</label>
+    <input type = "number" formControlName="amount" id="amount" (ngModelChange) = "submitAmount('from')">
+    <select formControlName="orders" id="orders" (ngModelChange)="submitCurrency()">
+      <option *ngFor="let order of orders; let i = index" [ngValue]="orders[i].name">
+        {{orders[i].name}}
+      </option>
+    </select>
+</form>
+<form class = "form" [formGroup]="formTo">
+    <label class="orders">Tooo</label>
+    <input type = "number" formControlName="amount" id="amount" (ngModelChange) = "submitAmount('to')">
+    <select formControlName="orders" id="orders"  (ngModelChange)="submitCurrency()" >
+      <option *ngFor="let order of orders; let i = index" [ngValue]="orders[i].name">
+        {{orders[i].name}}
+      </option>
+    </select>
+</form>
+

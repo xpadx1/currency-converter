@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <span>{{currency}} - </span>
+    <span *ngIf = "!loading; else loader">{{currencyRate | currency: currency}}</span>
+</div>
+
+<ng-template #loader>
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</ng-template>
